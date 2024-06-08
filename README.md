@@ -1,55 +1,59 @@
 
-
 # Knowledge Distillation in Neural Networks
 
-## Introduction
+## 1. About
 
-Knowledge distillation is a technique used to transfer the knowledge from a larger, more complex model (teacher model) to a smaller, simpler model (student model). This method is beneficial for deploying deep learning models in environments where computational resources are limited. By distilling the knowledge of a cumbersome model into a more manageable one, we can achieve comparable performance with significantly reduced computational overhead. This repository provides an implementation of knowledge distillation techniques using neural networks built with Keras.
+### 1.1. Knowledge Distillation
+Knowledge Distillation is a technique in machine learning and AI where a smaller model (student) is trained to emulate the behavior of a larger, pre-trained model (teacher). This method is beneficial for deploying deep learning models in environments where computational resources are limited. By distilling the knowledge of a cumbersome model into a more manageable one, we can achieve comparable performance with significantly reduced computational overhead. This project, part of an AI summer school at Texas A&M University in Doha, Qatar, provides an implementation of knowledge distillation techniques using neural networks built with Keras. Much of the inspiration for this project comes from the seminal paper ["Distilling the Knowledge in a Neural Network"](https://arxiv.org/abs/1503.02531).
 
-## Requirements
 
-To run the scripts and notebooks in this repository, you will need:
+### 1.2. DataSet and Model
+For this project, the CIFAR-10 dataset was employed, using a convolutional neural network. The architecture is based on a model from [this GitHub repository](https://github.com/MelihGulum/CIFAR-10-CNN-FLASK-Deployment/blob/main/CIFAR_10.ipynb). We distilled a large model with 2.2 million parameters into a much smaller model with only 330K parameters.
 
-- Python 3.9 or higher
-- Keras
+### 1.3. Results
+The following results demonstrate the effectiveness of our knowledge distillation approach:
+- **Average Accuracy**:
+  - Teacher: 89%
+  - Distilled Student: 86%
+  - Non-Distilled Student: 79%
+- **Average Precision**:
+  - Teacher: 89%
+  - Distilled Student: 87%
+  - Non-Distilled Student: 80%
+- **Average Recall**:
+  - Teacher: 89%
+  - Distilled Student: 86%
+  - Non-Distilled Student: 79%
 
-## Setup
+The optimal results were achieved with an alpha value of 0.8.
 
-Follow these steps to set up your local environment and run the models:
+## 2. Setup
 
-1. **Create a Virtual Environment:**
-   ```bash
-   python -m venv Venv
-   ```
-   Activate the virtual environment:
-   - Windows:
-     ```bash
-     .\Venv\Scripts\activate
-     ```
-   - macOS/Linux:
-     ```bash
-     source Venv/bin/activate
-     ```
+### Requirements
+- Python 3.10 or higher
+- All necessary libraries are listed in `requirements.txt`
 
-2. **Install Requirements:**
-   Install the required Python packages using:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Commands
+- Create a virtual environment named "Venv":
+  ```
+  python -m venv Venv
+  ```
+- Activate the virtual environment:
+  ```
+  source Venv/bin/activate  # On Unix/macOS
+  Venv\Scripts\activate  # On Windows
+  ```
+- Install the required packages:
+  ```
+  pip install -r requirements.txt
+  ```
 
-3. **Run the Notebooks:**
-   Launch Jupyter Notebook or JupyterLab in your environment:
-   ```bash
-   jupyter notebook
-   ```
-   Navigate to the directory containing the notebooks and open them to run the experiments.
+## 3. Presentation Link
+View the detailed presentation of our project [here](https://www.canva.com/design/DAGHDQk5gsc/qSqwTggxset_vPRi-wPDCw/edit?utm_content=DAGHDQk5gsc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
 
-# Presentation Link
-
-Access the presentation here: [presentation](https://www.canva.com/design/DAGHDQk5gsc/qSqwTggxset_vPRi-wPDCw/edit).
-
-## Contributions
-
-Contributions to this project are welcome! If you have improvements or bug fixes, please feel free to fork this repository, make your changes, and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
-
+## 4. Team
+- **Angiero Tani**, Polito - taniangiero@gmail.com
+- **Khater Christopher**, AUB - christopherkhater@hotmail.com
+- **Khodor Hashem**, AUB - hashemkhoder1@gmail.com
+- **Sayfiddinov Mukhammad Ali**, Polito - muhammadalisayfiddinov@gmail.com
 
